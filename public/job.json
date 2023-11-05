@@ -1,0 +1,110 @@
+[
+    {
+        "type": "Web_Development",
+        "job_title": "Front-end Developer",
+        "deadline": "2023-12-10",
+        "price_range": "$3000 - $5000",
+        "short_description": "Seeking a skilled front-end developer to create responsive and user-friendly interfaces for our web applications.",
+        "image": ""
+    },
+    {
+        "type": "Web_Development",
+        "job_title": "Back-end Developer",
+        "deadline": "2023-11-30",
+        "price_range": "$3500 - $6000",
+        "short_description": "Looking for a back-end developer to build and maintain the server-side of our web applications and databases.",
+        "image": ""
+    },
+    {
+        "type": "Web_Development",
+        "job_title": "Full-stack Developer",
+        "deadline": "2023-12-05",
+        "price_range": "$4000 - $7000",
+        "short_description": "Hiring a versatile full-stack developer to handle both front-end and back-end development tasks for our projects.",
+        "image": ""
+    },
+    {
+        "type": "Web_Development",
+        "job_title": "UI/UX Designer",
+        "deadline": "2023-11-25",
+        "price_range": "$2500 - $4500",
+        "short_description": "In search of a creative UI/UX designer to enhance the visual appeal and user experience of our web applications.",
+        "image": ""
+    },
+    {
+        "type": "Digital_Marketing",
+        "job_title": "Digital Marketing Specialist",
+        "deadline": "2023-12-15",
+        "price_range": "$3500 - $5500",
+        "short_description": "Looking for a skilled digital marketing specialist to develop and execute effective online marketing strategies for our brand.",
+        "image": ""
+    },
+    {
+        "type": "Digital_Marketing",
+        "job_title": "SEO Analyst",
+        "deadline": "2023-11-25",
+        "price_range": "$3000 - $5000",
+        "short_description": "Seeking an experienced SEO analyst to optimize our website's search engine performance and increase organic traffic.",
+        "image": ""
+    },
+    {
+        "type": "Digital_Marketing",
+        "job_title": "Social Media Manager",
+        "deadline": "2023-12-05",
+        "price_range": "$3200 - $5000",
+        "short_description": "Hiring a social media manager to oversee our social media accounts and create engaging content to boost our online presence.",
+        "image": ""
+    },
+    {
+        "type": "Digital_Marketing",
+        "job_title": "Content Marketing Specialist",
+        "deadline": "2023-11-30",
+        "price_range": "$3000 - $4500",
+        "short_description": "In search of a creative content marketing specialist to develop compelling content strategies that resonate with our target audience.",
+        "image": ""
+    },
+    {
+        "type": "Graphic_Design",
+        "job_title": "Graphic Designer",
+        "deadline": "2023-12-15",
+        "price_range": "$3000 - $5000",
+        "short_description": "Seeking a talented graphic designer to create visually appealing designs for various marketing materials and digital content.",
+        "image": ""
+    },
+    {
+        "type": "Graphic_Design",
+        "job_title": "UI Designer",
+        "deadline": "2023-11-25",
+        "price_range": "$3500 - $5500",
+        "short_description": "Looking for a skilled UI designer to enhance user experience by creating intuitive and visually compelling interfaces for our digital products.",
+        "image": ""
+    },
+    {
+        "type": "Graphic_Design",
+        "job_title": "Illustrator",
+        "deadline": "2023-12-05",
+        "price_range": "$2500 - $4500",
+        "short_description": "Hiring an illustrator to produce high-quality illustrations and artwork for a variety of digital and print media.",
+        "image": ""
+    },
+    {
+        "type": "Graphic_Design",
+        "job_title": "Motion Graphics Designer",
+        "deadline": "2023-11-30",
+        "price_range": "$3500 - $6000",
+        "short_description": "In search of a creative motion graphics designer to produce engaging visual content for marketing campaigns and promotional materials.",
+        "image": ""
+    }
+]
+
+[
+    {
+        "type": "Web_Development"
+    },
+    {
+        "type": "Digital_Marketing"
+    },
+    {
+        "type": "Graphic_Design"
+    }
+]
