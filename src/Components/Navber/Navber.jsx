@@ -7,6 +7,7 @@ const Navber = () => {
         <li><NavLink to={'/addjobs'}>Add Jobs</NavLink></li>
         <li><NavLink to={'/mypostedjob'}>My Posted Jobs</NavLink></li>
         <li><NavLink to={'/bidsrequest'}>Bids Request</NavLink></li>
+        <li><NavLink to={'/mybids'}>My Bids</NavLink></li>
     </>
     const authLinks = <>
         <li><NavLink to={'/login'}>Login</NavLink></li>

@@ -1,14 +1,49 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import { useLoaderData } from 'react-router';
+
+import { useLoaderData, useNavigate } from 'react-router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const JobDetails = () => {
     const job = useLoaderData();
+    const navigate = useNavigate();
     // console.log(job)
     const { job_title, deadline, price_range, short_description } = job
+
+
+    const handleBidForm = e => {
+        e.preventDefault();
+        const form = e.target
+        const userEmail = form.userEmail.value;
+        const bidamount = form.bidamount.value;
+        const deadline = form.deadline.value;
+        const buyeremail = form.buyeremail.value;
+
+        const bidInfo = { job_title, userEmail, bidamount, deadline, buyeremail }
+
+        // console.log(bidInfo)
+
+        ///create bids form data and send into the database
+        fetch(`http://localhost:5000/bids`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bidInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast("Bid on the project successfully!");
+                setInterval(5000)
+                console.log("Need time")
+            })
+
+        navigate('/mybids')
+    }
+
+
+
     return (
         <div className=' grid grid-cols-2 gap-5 mb-24'>
             <div>
@@ -25,45 +60,38 @@ const JobDetails = () => {
                 <div className="hero ">
                     <div className="hero-content ">
                         <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
-                            <form className="card-body">
-                                <div className=''>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Email</span>
-                                        </label>
-                                        <input type="email" placeholder="email" defaultValue={'polok@tv.com'} readOnly className="input w-full" required />
-                                    </div>
+                            <form onSubmit={handleBidForm} className="card-body">
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
+                                    </label>
+                                    <input type="email" name='userEmail' placeholder="email" defaultValue={'polok@tv.com'} readOnly className="input w-full" required />
                                 </div>
                                 <div className='flex-row md:flex-col lg:flex '>
                                     <div className="form-control mb-2">
                                         <label className="label">
-                                            <span className="label-text">Price</span>
-                                        </label>
-                                        <input type="number" placeholder="price" className="input " required />
-                                    </div>
-                                    <div className="form-control mb-2">
-                                        <label className="label">
                                             <span className="label-text">Bid Amount</span>
                                         </label>
-                                        <input type="number" placeholder="bid amount" className="input " required />
+                                        <input type="number" name='bidamount' placeholder="bid amount" className="input " required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Deadline</span>
                                         </label>
-                                        <input type="date" placeholder="password" className="input " required />
+                                        <input type="date" name='deadline' placeholder="password" className="input " required />
                                     </div>
                                 </div>
-                                <div className=''>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Email</span>
-                                        </label>
-                                        <input type="email" placeholder="Buyer email" defaultValue={'buyer@cv.com'} readOnly className="input w-full" required />
-                                    </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
+                                    </label>
+                                    <input type="email" name='buyeremail' placeholder="Buyer email" defaultValue={'buyer@cv.com'} readOnly className="input w-full" required />
                                 </div>
+
                                 <div className="form-control w-11 mt-6">
                                     <button className="btn btn-primary">Bid on the project</button>
+                                    <ToastContainer />
                                 </div>
                             </form>
                         </div>
