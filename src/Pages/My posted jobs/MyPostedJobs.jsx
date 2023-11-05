@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
+import PostJob from './postJob';
 
 const MyPostedJobs = () => {
+
+    const [postedJob, setPostedJob] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/addjobs')
+            .then(res => res.json())
+            .then(data => setPostedJob(data))
+    }, [])
+    console.log(postedJob)
     return (
         <div>
-            this uis my posted jobs
+            {
+                postedJob.map(job => <PostJob key={job._id} job={job}></PostJob>)
+            }
         </div>
     );
 };
