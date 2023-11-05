@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const EachJob = ({ job }) => {
     const { _id, job_title, deadline, price_range, short_description } = job
 
-    useEffect(() => { }, [])
+
     return (
         <div className="card w-96 bg-base-100 shadow-xl border-success outline-success">
             <div className="card-body">

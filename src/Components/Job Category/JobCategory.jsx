@@ -4,9 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import EachJob from './EachJob';
 const JobCategory = () => {
     const [alljobs, setallJobs] = useState([])
-    const [webJobs, setWebJobs] = useState([]);
-    const [digitalJobs, setDigitalJobs] = useState([]);
-    const [graphicsJob, setGraphicsJobs] = useState([]);
+    const [alltype, setalltype] = useState([])
 
 
     useEffect(() => {
@@ -15,8 +13,20 @@ const JobCategory = () => {
             .then(data => setallJobs(data))
     }, [])
 
+    useEffect(() => {
+        fetch('http://localhost:5000/alltype')
+            .then(res => res.json())
+            .then(data => setalltype(data))
+    }, [])
 
+    const webJobs = alljobs.filter(job => job.type === alltype[0].type)
+    const digitalJobs = alljobs.filter(job => job.type === alltype[1].type)
+    const graphicsJob = alljobs.filter(job => job.type === alltype[2].type)
 
+    // console.log(alltype[0].type)
+    // console.log(webJobs)
+    // console.log(digitalJobs)
+    // console.log(graphicsJob)
 
     return (
         <div className='mt-24'>
@@ -31,23 +41,23 @@ const JobCategory = () => {
                 </TabList>
                 <TabPanel>
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 '>
-                        {/* {
+                        {
                             webJobs.map(job => <EachJob key={job._id} job={job}></EachJob>)
-                        } */}
+                        }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 '>
-                        {/* {
+                        {
                             digitalJobs.map(job => <EachJob key={job._id} job={job}></EachJob>)
-                        } */}
+                        }
                     </div>
                 </TabPanel>
                 <TabPanel>
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 '>
-                        {/* {
+                        {
                             graphicsJob.map(job => <EachJob key={job._id} job={job}></EachJob>)
-                        } */}
+                        }
                     </div>
                 </TabPanel>
             </Tabs>
