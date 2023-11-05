@@ -19,9 +19,9 @@ const JobCategory = () => {
             .then(data => setalltype(data))
     }, [])
 
-    const webJobs = alljobs.filter(job => job.type === alltype[0].type)
-    const digitalJobs = alljobs.filter(job => job.type === alltype[1].type)
-    const graphicsJob = alljobs.filter(job => job.type === alltype[2].type)
+    const webJobs = alljobs.filter(job => job.type === alltype[0]?.type)
+    const digitalJobs = alljobs.filter(job => job.type === alltype[1]?.type)
+    const graphicsJob = alljobs.filter(job => job.type === alltype[2]?.type)
 
     // console.log(alltype[0].type)
     // console.log(webJobs)

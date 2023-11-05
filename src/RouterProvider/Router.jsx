@@ -29,10 +29,6 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '*',
-                element: <Error></Error>
-            },
-            {
                 path: '/addjobs',
                 element: <AddJobs></AddJobs>
             },
@@ -51,6 +47,10 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '*',
+        element: <Error></Error>
+    }
 ]);
 
 export default router
