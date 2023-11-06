@@ -1,9 +1,9 @@
-
+import err from '../../assets/404-status-code.png'
 
 const Error = () => {
     return (
         <div>
-            this is error
+            <img className='' src={err} alt="" />
         </div>
     );
 };
