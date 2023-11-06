@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login";
 import Mybids from "../Pages/My Bids/Mybids";
 import MyPostedJobs from "../Pages/My posted jobs/MyPostedJobs";
 import Register from "../Pages/Register/Register";
+import UpdateJob from "../Pages/Updatejob/UpdateJob";
 
 
 
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/mypostedjob',
-                element: <MyPostedJobs></MyPostedJobs>
+                element: <MyPostedJobs></MyPostedJobs>,
+                loader: () => fetch(`http://localhost:5000/addjobs`)
             },
             {
                 path: '/bidsrequest',
@@ -49,6 +51,10 @@ const router = createBrowserRouter([
                 path: '/jobdetails/:id',
                 element: <JobDetails></JobDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/alljobs/${params.id}`)
+            }, {
+                path: '/updatejob/:id',
+                element: <UpdateJob></UpdateJob>,
+                loader: ({ params }) => fetch(`http://localhost:5000/addjobs/${params.id}`)
             }
         ]
     },
