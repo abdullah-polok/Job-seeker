@@ -11,7 +11,7 @@ const JobDetails = () => {
     const job = useLoaderData();
     const navigate = useNavigate();
     // console.log(job)
-    const { job_title, deadline, price_range, short_description } = job
+    const { poster_email, job_title, deadline, price_range, short_description } = job
 
 
     const handleBidForm = e => {
@@ -89,11 +89,15 @@ const JobDetails = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name='buyeremail' placeholder="Buyer email" defaultValue={'buyer@cv.com'} readOnly className="input w-full" required />
+                                    <input type="email" name='buyeremail' placeholder="Buyer email" defaultValue={poster_email} readOnly className="input w-full" required />
                                 </div>
 
                                 <div className="form-control w-11 mt-6">
-                                    <button className="btn btn-primary">Bid on the project</button>
+                                    {user?.email === poster_email ?
+                                        <button className="btn btn-primary" disabled>Bid on the project</button>
+                                        :
+                                        <button className="btn btn-primary" >Bid on the project</button>
+                                    }
                                     <ToastContainer />
                                 </div>
                             </form>
