@@ -1,8 +1,10 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router'
-
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useContext } from 'react';
 const AddJobs = () => {
+    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
 
@@ -48,7 +50,7 @@ const AddJobs = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" defaultValue={'polok@tv.com'} readOnly className="input w-full" required />
+                                <input type="email" name='email' placeholder="email" defaultValue={user?.email} readOnly className="input w-full text-sm" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">

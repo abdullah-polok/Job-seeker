@@ -1,18 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import PostJob from './postJob';
 
 const MyPostedJobs = () => {
-
+    const { user } = useContext(AuthContext);
     const [postedJob, setPostedJob] = useState([])
 
+    const url = `http://localhost:5000/addjobs?email=${user?.email}`
     useEffect(() => {
-        fetch('http://localhost:5000/addjobs')
+        fetch(url)
             .then(res => res.json())
             .then(data => setPostedJob(data))
-    }, [])
+    }, [url])
     console.log(postedJob)
     return (
-        <div>
+        <div className='grid grid-cols-1 gap-5'>
             {
                 postedJob.map(job => <PostJob key={job._id} job={job}></PostJob>)
             }

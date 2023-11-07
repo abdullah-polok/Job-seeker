@@ -7,38 +7,15 @@ const Mybids = () => {
     const [bids, setbids] = useState([])
 
 
-    const statusupdate = (bidId, newStatus) => {
-        const updatedBids = bids.map(bid => {
-            if (bid.id == bidId) {
-                return { ...bid, Status: newStatus }
-            }
-            return bid
-        })
 
-        setbids(updatedBids)
-    }
-
-
-
-    const aceptBid = (bidId) => {
-        statusupdate(bidId, "In Progress")
-    }
-
-    const rejectBid = (bidId) => {
-        statusupdate(bidId, "Canceled")
-    }
-
-    const completeJob = (bidId) => {
-        statusupdate(bidId, "Complete")
-    }
 
     const url = `http://localhost:5000/bids?email=${user?.email}`
 
     useEffect(() => {
-        fetch(url, { credentials: 'include' })
+        fetch(url)
             .then(res => res.json())
             .then(data => setbids(data))
-    }, [])
+    }, [url])
     console.log(bids)
     return (
         <div className="overflow-x-auto">
@@ -62,9 +39,9 @@ const Mybids = () => {
                             <td id='statusId'>pending</td>
                             <td>
                                 <div>
-                                    <button onClick={() => aceptBid(bid._id)} className='btn btn-primary mr-2'><FaCheck></FaCheck></button>
-                                    <button onClick={() => rejectBid(bid._id)} className='btn btn-primary'><FaXmark></FaXmark></button>
-                                    <button id={`complete-${bid._id}`} onClick={() => completeJob(bid._id)} disabled={bid.status !== 'In progress'}></button>
+                                    <button className='btn btn-primary mr-2'><FaCheck></FaCheck></button>
+                                    <button className='btn btn-primary'><FaXmark></FaXmark></button>
+                                    {/* <button id={`complete-${bid._id}`} onClick={() => completeJob(bid._id)} disabled={bid.status !== 'In progress'}></button> */}
                                 </div>
                             </td>
                         </tr>)
