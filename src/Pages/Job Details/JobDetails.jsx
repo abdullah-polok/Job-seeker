@@ -22,7 +22,7 @@ const JobDetails = () => {
         const deadline = form.deadline.value;
         const buyeremail = form.buyeremail.value;
 
-        const bidInfo = { job_title, userEmail, bidamount, deadline, buyeremail }
+        const bidInfo = { job_title, userEmail, bidamount, deadline, buyeremail, status: "Pending" }
 
         // console.log(bidInfo)
 

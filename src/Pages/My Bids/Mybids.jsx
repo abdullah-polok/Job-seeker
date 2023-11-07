@@ -1,15 +1,58 @@
 import { useContext, useEffect, useState } from 'react';
-import { FaCheck, } from 'react-icons/fa'
-import { FaXmark } from "react-icons/fa6";
+
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import BidsRow from './bidsRow';
 const Mybids = () => {
     const { user } = useContext(AuthContext);
     const [bids, setbids] = useState([])
 
 
-
-
     const url = `http://localhost:5000/bids?email=${user?.email}`
+
+    const handleReject = (bid) => {
+        let { _id, job_title, deadline, userEmail, status } = bid
+        const bidUpdate = { job_title, deadline, userEmail, status: 'Canceled' }
+
+        fetch(`http://localhost:5000/bids?email=${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bidUpdate)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                const remainning = bids.filter(bid => bid._id !== _id)
+                const updated = bids.filter(bid => bid._id === _id)
+                updated.status = 'Canceled'
+                const newUpdated = [updated, ...remainning]
+                setbids(newUpdated)
+            })
+    }
+
+    const handleAccept = (bid) => {
+        let { _id, job_title, deadline, userEmail, status } = bid
+        const bidUpdate = { job_title, deadline, userEmail, status: 'In Progress' }
+
+        fetch(`http://localhost:5000/bids?email=${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bidUpdate)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                const remainning = bids.filter(bid => bid._id !== _id)
+                const updated = bids.filter(bid => bid._id === _id)
+                updated.status = 'In Progress'
+                const newUpdated = [updated, ...remainning]
+                setbids(newUpdated)
+            })
+    }
+
 
     useEffect(() => {
         fetch(url)
@@ -32,19 +75,7 @@ const Mybids = () => {
                 </thead>
                 <tbody>
                     {
-                        bids.map((bid) => <tr key={bid._id}>
-                            <td>{bid.job_title}</td>
-                            <td>{bid.userEmail}</td>
-                            <td>{bid.deadline}</td>
-                            <td id='statusId'>pending</td>
-                            <td>
-                                <div>
-                                    <button className='btn btn-primary mr-2'><FaCheck></FaCheck></button>
-                                    <button className='btn btn-primary'><FaXmark></FaXmark></button>
-                                    {/* <button id={`complete-${bid._id}`} onClick={() => completeJob(bid._id)} disabled={bid.status !== 'In progress'}></button> */}
-                                </div>
-                            </td>
-                        </tr>)
+                        bids.map((bid) => <BidsRow key={bid._id} bid={bid} handleReject={handleReject} handleAccept={handleAccept}></BidsRow>)
                     }
                 </tbody>
             </table>
