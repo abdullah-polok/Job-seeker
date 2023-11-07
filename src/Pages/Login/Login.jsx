@@ -57,22 +57,19 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input w-full" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                <input type="password" name="password" placeholder="password" className="input w-full" required />
                             </div>
                             <div className="form-control mt-6 text-center">
                                 <button className="btn btn-primary w-full ">Login</button>
                             </div>
                         </form>
-                        <button onClick={handlePopUp}>Login via Google</button>
+                        <button className="btn btn-success mx-4" onClick={handlePopUp}><span className="">Login via Google</span></button>
                         <p className="p-5">Do not have a account?<Link to={'/register'} className="text-blue-500">Register</Link></p>
                     </div>
                 </div>

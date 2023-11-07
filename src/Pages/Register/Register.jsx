@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import loginImage from '../../assets/sign-in-page-abstract-concept-vector-illustration-enter-application-mobile-screen-user-login-form-website-page-interface-ui-new-profile-registra-2J3T8FG-removebg-preview.png'
+
 const Register = () => {
     const [registerError, setRegisterError] = useState('')
     const userInfo = useContext(AuthContext)
@@ -62,48 +64,47 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col ">
-                <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Register now!</h1>
-                </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleRegister} className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input type="text" name="name" placeholder="name" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Image URL</span>
-                            </label>
-                            <input type="text" name="photoURL" placeholder="image link" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Register</button>
-                            <ToastContainer></ToastContainer>
-                        </div>
-                    </form>
+        <div className="flex items-center justify-center bg-slate-200">
+            <div className="hero w-full ">
+                <div className="hero-content flex-col ">
+                    <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
+                        <form onSubmit={handleRegister} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" name="name" placeholder="name" className="input w-full" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email" name="email" placeholder="email" className="input w-full" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="password" name="password" placeholder="password" className="input w-full" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Image URL</span>
+                                </label>
+                                <input type="text" name="photoURL" placeholder="image link" className="input w-full" required />
+                            </div>
+                            <div className="form-control mt-6 text-center">
+                                <button className="btn btn-primary w-full">Register</button>
+                                <ToastContainer></ToastContainer>
+                            </div>
+                        </form>
 
-                    <p className="p-5">Have a account?<Link to={'/login'} className="text-blue-500">Login</Link></p>
+                        <p className="p-5">Have a account?<Link to={'/login'} className="text-blue-500">Login</Link></p>
+                    </div>
                 </div>
+            </div>
+            <div className="hidden md:block lg:block">
+                <img className="w-[1000px]" src={loginImage} alt="" />
             </div>
         </div>
     );
