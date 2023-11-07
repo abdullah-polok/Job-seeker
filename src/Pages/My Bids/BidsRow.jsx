@@ -20,15 +20,21 @@ const BidsRow = ({ bid, handleReject, handleAccept }) => {
             <td>
                 <div>
                     {
-                        status === 'In progress' ? <><button className='btn'>Complete</button></> : <>
+                        status === 'In Progress' ? <>
                             <button onClick={() => handleAccept(bid)} className='btn btn-success mr-2'><FaCheck></FaCheck></button>
                             <button onClick={() => handleReject(bid)} className='btn'><FaXmark className='bg-red-500 w-[40px] rounded-sm '></FaXmark></button>
-                        </>
+                            <button className='btn btn-primary'>Complete</button>
+                        </> :
+                            <>
+                                <button onClick={() => handleAccept(bid)} className='btn btn-success mr-2'><FaCheck></FaCheck></button>
+                                <button onClick={() => handleReject(bid)} className='btn'><FaXmark className='bg-red-500 w-[40px] rounded-sm '></FaXmark></button>
+                            </>
+
                     }
                     {/* <button id={`complete-${bid._id}`} onClick={() => completeJob(bid._id)} disabled={bid.status !== 'In progress'}></button> */}
                 </div>
             </td>
-        </tr>
+        </tr >
     );
 };
 

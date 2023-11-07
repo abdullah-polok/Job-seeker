@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from 'react'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import iconjob from '../../assets/android-chrome-512x512.png'
 const Navber = () => {
     const userInfo = useContext(AuthContext)
     const { user, logoutUser } = userInfo
@@ -26,7 +27,11 @@ const Navber = () => {
                         {navlinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">JobSeeker</a>
+                <div className="flex items-center">
+                    <img className="w-[30px] h-[30px]" src={iconjob} alt="" />
+                    <a className="btn btn-ghost normal-case text-xl">JobSeeker</a>
+
+                </div>
             </div>
             <div className="hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
