@@ -1,10 +1,13 @@
+import { useContext } from 'react';
 import Card from 'react-bootstrap/Card';
 
 import { useLoaderData, useNavigate } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const JobDetails = () => {
+    const { user } = useContext(AuthContext);
     const job = useLoaderData();
     const navigate = useNavigate();
     // console.log(job)
@@ -65,7 +68,7 @@ const JobDetails = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name='userEmail' placeholder="email" defaultValue={'polok@tv.com'} readOnly className="input w-full" required />
+                                    <input type="email" name='userEmail' placeholder="email" defaultValue={user?.email} readOnly className="input w-full" required />
                                 </div>
                                 <div className='flex-row md:flex-col lg:flex '>
                                     <div className="form-control mb-2">

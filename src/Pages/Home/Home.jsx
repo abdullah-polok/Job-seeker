@@ -8,10 +8,8 @@ import Navber from "../../Components/Navber/Navber";
 const Home = () => {
     return (
         <div>
-            <Navber></Navber>
             <Banner></Banner>
             <JobCategory></JobCategory>
-            <Footer></Footer>
         </div>
     );
 };

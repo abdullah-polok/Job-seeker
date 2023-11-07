@@ -12,9 +12,10 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
+        const name = form.name.value;
         const email = form.email.value
         const password = form.password.value
-
+        const photoURL = form.photoURL.value
         console.log(email, password)
 
         ///Check password length
@@ -70,6 +71,12 @@ const Register = () => {
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name="email" placeholder="email" className="input input-bordered" required />
@@ -82,6 +89,12 @@ const Register = () => {
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Image URL</span>
+                            </label>
+                            <input type="text" name="photoURL" placeholder="image link" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
