@@ -23,7 +23,7 @@ const AddJobs = () => {
         console.log(jobInfo)
 
         ///create bids form data and send into the database
-        fetch(`http://localhost:5000/addjobs`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/addjobs`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,20 +43,20 @@ const AddJobs = () => {
     return (
         <div className="hero ">
             <div className="hero-content ">
-                <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full">
                     <form onSubmit={handleAddJobs} className="card-body">
                         <div className='flex-row md:flex-col lg:flex '>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" defaultValue={user?.email} readOnly className="input w-full text-sm" required />
+                                <input type="email" name='email' placeholder="email" defaultValue={user?.email} readOnly className="input text-white  w-full text-sm" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Job Title</span>
                                 </label>
-                                <input type="text" name='jobTitle' placeholder="Job title" className="input w-full" required />
+                                <input type="text" name='jobTitle' placeholder="Job title" className="input text-white  w-full" required />
                             </div>
                         </div>
 
@@ -65,13 +65,13 @@ const AddJobs = () => {
                                 <label className="label">
                                     <span className="label-text">Minimum Amount</span>
                                 </label>
-                                <input type="number" name='minamount' placeholder="Minimum amount" className="input " required />
+                                <input type="number" name='minamount' placeholder="Minimum amount" className="input text-white  " required />
                             </div>
                             <div className="form-control mb-2">
                                 <label className="label">
                                     <span className="label-text">Maximum Amount</span>
                                 </label>
-                                <input type="number" name='maxamount' placeholder="Maximum amount" className="input " required />
+                                <input type="number" name='maxamount' placeholder="Maximum amount" className="input text-white  " required />
                             </div>
                         </div>
                         <div className='flex-row md:flex-col lg:flex '>
@@ -79,23 +79,23 @@ const AddJobs = () => {
                                 <label className="label">
                                     <span className="label-text">Deadline</span>
                                 </label>
-                                <input type="date" name='deadline' placeholder="password" className="input " required />
+                                <input type="date" name='deadline' placeholder="password" className="input text-white " required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Type</span>
                                 </label>
-                                <input type="text" name='type' placeholder="job type" className="input w-full" required />
+                                <input type="text" name='type' placeholder="job type" className="input text-white  w-full" required />
                             </div>
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Short Description</span>
                             </label>
-                            <input type="text" name='shortDescription' placeholder="Short Description" className="input w-full h-24" required />
+                            <input type="text" name='shortDescription' placeholder="Short Description" className="input text-white  w-full h-24" required />
                         </div>
                         <div className="form-control w-11 mt-6">
-                            <button className="btn btn-primary">Add job</button>
+                            <button className="btn btn-primary w-full">Add job</button>
                             <ToastContainer />
                         </div>
                     </form>

@@ -1,15 +1,15 @@
-
-
+import Aboutus from "../../Components/About us/Aboutus.jsx/Aboutus";
 import Banner from "../../Components/Banner/Banner";
-import Footer from "../../Components/Footer/Footer";
 import JobCategory from "../../Components/Job Category/JobCategory";
-import Navber from "../../Components/Navber/Navber";
+import State from "../../Components/State/State";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <JobCategory></JobCategory>
+            <State></State>
+            <Aboutus></Aboutus>
         </div>
     );
 };

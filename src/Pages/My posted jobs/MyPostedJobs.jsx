@@ -6,7 +6,7 @@ const MyPostedJobs = () => {
     const { user } = useContext(AuthContext);
     const [postedJob, setPostedJob] = useState([])
 
-    const url = `http://localhost:5000/addjobs?email=${user?.email}`
+    const url = `https://job-seeker-server-liard.vercel.app/addjobs?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

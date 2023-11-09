@@ -11,7 +11,9 @@ const JobDetails = () => {
     const job = useLoaderData();
     const navigate = useNavigate();
     // console.log(job)
-    const { poster_email, job_title, deadline, price_range, short_description } = job
+    const { poster_poster_email
+        , poster_email, job_title, deadline, price_range, short_description } = job
+    console.log(job)
 
 
     const handleBidForm = e => {
@@ -23,11 +25,10 @@ const JobDetails = () => {
         const buyeremail = form.buyeremail.value;
 
         const bidInfo = { job_title, userEmail, bidamount, deadline, buyeremail, status: "Pending" }
-
-        // console.log(bidInfo)
+        console.log(bidInfo)
 
         ///create bids form data and send into the database
-        fetch(`http://localhost:5000/bids`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/bids`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -62,41 +63,42 @@ const JobDetails = () => {
             <div>
                 <div className="hero ">
                     <div className="hero-content ">
-                        <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+                        <div className="card flex-shrink-0 w-full">
                             <form onSubmit={handleBidForm} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name='userEmail' placeholder="email" defaultValue={user?.email} readOnly className="input w-full" required />
+                                    <input type="email" name='userEmail' placeholder="email" defaultValue={user?.email} readOnly className="input w-full text-white" required />
                                 </div>
                                 <div className='flex-row md:flex-col lg:flex '>
                                     <div className="form-control mb-2">
                                         <label className="label">
                                             <span className="label-text">Bid Amount</span>
                                         </label>
-                                        <input type="number" name='bidamount' placeholder="bid amount" className="input " required />
+                                        <input type="number" name='bidamount' placeholder="bid amount" className="input text-white " required />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Deadline</span>
                                         </label>
-                                        <input type="date" name='deadline' placeholder="password" className="input " required />
+                                        <input type="date" name='deadline' placeholder="password" className="input text-white " required />
                                     </div>
                                 </div>
 
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text">Poster Email</span>
                                     </label>
-                                    <input type="email" name='buyeremail' placeholder="Buyer email" defaultValue={poster_email} readOnly className="input w-full" required />
+                                    <input type="email" name='buyeremail' placeholder="Buyer email" defaultValue={poster_poster_email
+                                    } readOnly className="input w-full text-white" required />
                                 </div>
 
                                 <div className="form-control w-11 mt-6">
                                     {user?.email === poster_email ?
-                                        <button className="btn btn-primary" disabled>Bid on the project</button>
+                                        <button className="btn btn-primary w-full" disabled>Bid on the project</button>
                                         :
-                                        <button className="btn btn-primary" >Bid on the project</button>
+                                        <button className="btn btn-primary w-full " >Bid on the project</button>
                                     }
                                     <ToastContainer />
                                 </div>

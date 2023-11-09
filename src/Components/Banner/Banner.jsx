@@ -11,32 +11,51 @@ const Banner = () => {
         setIndex(selectedIndex);
     }
     return (
-        <div>
+        <div className='mt-4' >
             <Carousel activeIndex={index} onSelect={handleSelect}>
                 <Carousel.Item>
                     {/* <ExampleCarouselImage text="First slide" /> */}
-                    <img className='w-full' src={img1} alt="" />
+                    <div className='relative'>
+                        <img className='w-full ' src={img1} alt="" />
+                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div className="absolute inset-0 bottom-10 flex-col text-center top-3/4 justify-center items-center">
+                            <h3 className='text-white text-3xl font-bold'>Geat Opportunity</h3>
+                            <p className='text-white text-lg font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>
+                        </div>
+                    </div>
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        {/* <div className='bg-stone-200'>
+                            <h3 className='text-black font-semibold'>Geat Opportunity</h3>
+                            <p className='text-black font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>
+                        </div> */}
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     {/* <ExampleCarouselImage text="Second slide" /> */}
-                    <img className='w-full' src={img2} alt="" />
+                    <div className='relative'>
+                        <img className='w-full ' src={img2} alt="" />
+                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div className="absolute inset-0 bottom-10 flex-col text-center top-3/4 justify-center items-center">
+                            <h3 className='text-white text-3xl font-bold'>Geat Opportunity</h3>
+                            <p className='text-white text-lg font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>
+                        </div>
+                    </div>
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     {/* <ExampleCarouselImage text="Third slide" /> */}
-                    <img className='w-full' src={img3} alt="" />
+                    <div className='relative'>
+                        <img className='w-full ' src={img3} alt="" />
+                        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                        <div className="absolute inset-0 bottom-10 flex-col text-center top-3/4 justify-center items-center">
+                            <h3 className='text-white text-3xl font-bold'>Geat Opportunity</h3>
+                            <p className='text-white text-lg font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>
+                        </div>
+                    </div>
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
+
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

@@ -9,7 +9,7 @@ const PostJob = ({ job }) => {
 
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/addjobs/${id}`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/addjobs/${id}`, {
             method: 'DELETE'
         })
             .then(res => {
@@ -28,8 +28,8 @@ const PostJob = ({ job }) => {
             })
     }
     return (
-        <div className=" bg-base-200">
-            <div className="flex justify-between items-center p-3 rounded-lg">
+        <div className="bg-blue-100 mt-2">
+            <div className="flex justify-between items-center p-3 rounded-lg text-base">
                 <div>
                     <h1 className="text-xl font-bold">{job_title}</h1>
                     <div>

@@ -26,7 +26,7 @@ const UpdateJob = () => {
         console.log(jobInfo)
 
         ///update form data and send into the database
-        fetch(`http://localhost:5000/addjobs/${_id}`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/addjobs/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

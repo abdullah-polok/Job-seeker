@@ -7,13 +7,13 @@ const Mybids = () => {
     const [bids, setbids] = useState([])
 
 
-    const url = `http://localhost:5000/bids?email=${user?.email}`
+    const url = `https://job-seeker-server-liard.vercel.app/bids?email=${user?.email}`
 
     const handleReject = (bid) => {
         let { _id, job_title, deadline, userEmail, status } = bid
         const bidUpdate = { job_title, deadline, userEmail, status: 'Canceled' }
 
-        fetch(`http://localhost:5000/bids?email=${_id}`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/bids/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const Mybids = () => {
         let { _id, job_title, deadline, userEmail, status } = bid
         const bidUpdate = { job_title, deadline, userEmail, status: 'In Progress' }
 
-        fetch(`http://localhost:5000/bids?email=${_id}`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/bids/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

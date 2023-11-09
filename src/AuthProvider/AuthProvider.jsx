@@ -2,13 +2,12 @@
 import { useEffect, createContext, useState } from "react";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
-import axios from "axios";
-
 export const AuthContext = createContext(null)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true)
-
+    const [allbids, setallbids] = useState([])
+    const [buyeremail, setbuyeremail] = useState('')
     ////extra login
     const provider = new GoogleAuthProvider();
 
@@ -40,33 +39,18 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             ////take user email before set 
-            const userEmail = currentUser?.email || user?.email
-            const loggedUser = { email: userEmail }
-
             setUser(currentUser)
             setLoading(false)
             console.log(currentUser)
-            ////jwt token 
-            //if user exist then issue a token
-            if (currentUser) {
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
-                    .then(res => {
-                        console.log('token response', res.data)
-                    })
-            }
-            /// if user not exits 
-            ///for remove the cookie from local storage
-            else {
-                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
-                    .then(res => console.log(res.data))
-            }
         })
         return () => {
             unsubscribe();
         }
     }, [])
 
-    const userInfo = { user, setUser, loading, createUser, signInUser, loginUserPop, logoutUser }
+    console.log(buyeremail)
+
+    const userInfo = { user, setUser, loading, createUser, signInUser, loginUserPop, logoutUser, buyeremail, setbuyeremail, allbids, setallbids }
     return (
         <AuthContext.Provider value={userInfo}>
             {children}

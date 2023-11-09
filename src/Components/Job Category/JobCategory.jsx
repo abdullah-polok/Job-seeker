@@ -8,13 +8,13 @@ const JobCategory = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/alljobs')
+        fetch('https://job-seeker-server-liard.vercel.app/alljobs')
             .then(res => res.json())
             .then(data => setallJobs(data))
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltype')
+        fetch('https://job-seeker-server-liard.vercel.app/alltype')
             .then(res => res.json())
             .then(data => setalltype(data))
     }, [])
@@ -31,7 +31,7 @@ const JobCategory = () => {
     return (
         <div className='mt-24'>
             <div>
-                <h1 className='text-3xl font-bold '>Job Category</h1>
+                <h1 className='text-3xl font-semibold rounded-md p-3 text-center  border-2 border-success'>Job Category</h1>
             </div>
             <Tabs>
                 <TabList>
@@ -40,21 +40,21 @@ const JobCategory = () => {
                     <Tab>Graphics Design</Tab>
                 </TabList>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 '>
                         {
                             webJobs.map(job => <EachJob key={job._id} job={job}></EachJob>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 '>
                         {
                             digitalJobs.map(job => <EachJob key={job._id} job={job}></EachJob>)
                         }
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-2 '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 '>
                         {
                             graphicsJob.map(job => <EachJob key={job._id} job={job}></EachJob>)
                         }

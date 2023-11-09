@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path: '/mypostedjob',
                 element: <PrivateRouter><MyPostedJobs></MyPostedJobs></PrivateRouter>,
-                loader: () => fetch(`http://localhost:5000/addjobs`)
+                loader: () => fetch(`https://job-seeker-server-liard.vercel.app/addjobs`)
             },
             {
                 path: '/bidsrequest',
@@ -51,11 +51,11 @@ const router = createBrowserRouter([
             {
                 path: '/jobdetails/:id',
                 element: <PrivateRouter><JobDetails></JobDetails></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/alljobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://job-seeker-server-liard.vercel.app/alljobs/${params.id}`)
             }, {
                 path: '/updatejob/:id',
                 element: <PrivateRouter><UpdateJob></UpdateJob></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addjobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://job-seeker-server-liard.vercel.app/addjobs/${params.id}`)
             }
         ]
     },

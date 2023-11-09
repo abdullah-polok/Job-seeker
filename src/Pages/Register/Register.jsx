@@ -64,34 +64,34 @@ const Register = () => {
             })
     }
     return (
-        <div className="flex items-center justify-center bg-slate-200">
+        <div className="flex items-center justify-center ">
             <div className="hero w-full ">
                 <div className="hero-content flex-col ">
-                    <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full">
                         <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" name="name" placeholder="name" className="input w-full" required />
+                                <input type="text" name="name" placeholder="name" className="input w-full text-white" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input w-full" required />
+                                <input type="email" name="email" placeholder="email" className="input w-full text-white" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input w-full" required />
+                                <input type="password" name="password" placeholder="password" className="input w-full text-white" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Image URL</span>
                                 </label>
-                                <input type="text" name="photoURL" placeholder="image link" className="input w-full" required />
+                                <input type="text" name="photoURL" placeholder="image link" className="input w-full text-white" required />
                             </div>
                             <div className="form-control mt-6 text-center">
                                 <button className="btn btn-primary w-full">Register</button>
