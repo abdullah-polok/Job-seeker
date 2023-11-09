@@ -14,8 +14,8 @@ const Banner = () => {
     return (
         <div className="carousel w-full mt-2">
             <div id="slide1" className="carousel-item relative w-full">
-                <img src={img1} className="w-full" />
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <img src={img1} className="w-full rounded-xl" />
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl"></div>
                 <div className="absolute inset-0 bottom-10 flex-col text-center top-3/4 justify-center items-center">
                     <h3 className='text-white text-3xl font-bold'>Geat Opportunity</h3>
                     <p className='text-white text-lg font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>
@@ -26,8 +26,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
-                <img src={img2} className="w-full" />
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <img src={img2} className="w-full rounded-xl" />
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl"></div>
                 <div className="absolute inset-0 bottom-10 flex-col text-center top-3/4 justify-center items-center">
                     <h3 className='text-white text-3xl font-bold'>Geat Opportunity</h3>
                     <p className='text-white text-lg font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>
@@ -38,8 +38,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-                <img src={img3} className="w-full" />
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <img src={img3} className="w-full rounded-xl" />
+                <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl"></div>
                 <div className="absolute inset-0 bottom-10 flex-col text-center top-3/4 justify-center items-center">
                     <h3 className='text-white text-3xl font-bold'>Geat Opportunity</h3>
                     <p className='text-white text-lg font-semibold'>Job opportunity means any established employment position which is currently vacant and left unfilled by a qualified worker</p>

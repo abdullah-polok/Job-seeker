@@ -5,7 +5,7 @@ const State = () => {
     const userInfo = useContext(AuthContext)
     const { user } = userInfo
     return (
-        <div className="stats bg-zinc-100 shadow-md flex justify-center mt-24">
+        <div className="stats shadow-gray-400 shadow-lg rounded-lg flex justify-center mt-24">
 
             <div className="stat">
                 <div className="stat-figure text-primary">

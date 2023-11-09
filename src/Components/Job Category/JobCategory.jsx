@@ -31,7 +31,7 @@ const JobCategory = () => {
     return (
         <div className='mt-24'>
             <div>
-                <h1 className='text-3xl font-semibold rounded-md p-3 text-center  border-2 border-success'>Job Category</h1>
+                <h1 className='text-3xl font-semibold rounded-md p-3 text-center  border-2 border-success shadow-gray-400 shadow-sm mb-4'>Job Category</h1>
             </div>
             <Tabs>
                 <TabList>

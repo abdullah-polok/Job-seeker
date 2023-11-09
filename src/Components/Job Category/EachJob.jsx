@@ -6,7 +6,7 @@ const EachJob = ({ job }) => {
 
 
     return (
-        <div className="card w-96 bg-zinc-100 shadow-md border-success outline-success">
+        <div className="card w-96 shadow-gray-400 shadow-lg border-success">
             <div className="card-body">
                 <h2 className="card-title">{job_title}</h2>
                 <p className='text-lg'>{short_description}</p>
