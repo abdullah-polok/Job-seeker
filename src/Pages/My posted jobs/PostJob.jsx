@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const PostJob = ({ job }) => {
 
-    const { _id, job_title, email, minamount, maxamount, deadline, short_description, type } = job
+    const { _id, job_title, email, price_range, deadline, short_description, type } = job
 
     const [jobs, setjobs] = useState();
 
@@ -38,7 +38,7 @@ const PostJob = ({ job }) => {
                     </div>
                     <div className="mt-4">
                         <p className="text-sm mt-0 mb-1" >Deadline: {deadline}</p>
-                        <p className="text-sm mt-0 mb-1">Price: ${minamount}-{maxamount}</p>
+                        <p className="text-sm mt-0 mb-1">Price: ${price_range}</p>
                         <p className="text-xs">Description: {short_description}</p>
                     </div>
                 </div>

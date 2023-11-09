@@ -15,15 +15,16 @@ const AddJobs = () => {
         const email = form.email.value;
         const minamount = form.minamount.value;
         const maxamount = form.maxamount.value;
+        const price_range = `${minamount}-${maxamount}`
         const deadline = form.deadline.value;
         const short_description = form.shortDescription.value;
         const type = form.type.value;
-        const jobInfo = { job_title, email, minamount, maxamount, deadline, short_description, type }
+        const jobInfo = { job_title, email, price_range, deadline, short_description, type }
 
         console.log(jobInfo)
 
         ///create bids form data and send into the database
-        fetch(`https://job-seeker-server-liard.vercel.app/addjobs`, {
+        fetch(`https://job-seeker-server-liard.vercel.app/alljobs`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -85,7 +86,7 @@ const AddJobs = () => {
                                 <label className="label">
                                     <span className="label-text">Type</span>
                                 </label>
-                                <input type="text" name='type' placeholder="job type" className="input text-white  w-full" required />
+                                <input type="text" name='type' placeholder="Job Type" className="input text-white  w-full" required />
                             </div>
                         </div>
                         <div className="form-control">
