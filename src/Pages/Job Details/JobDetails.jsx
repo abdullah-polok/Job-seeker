@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import Card from 'react-bootstrap/Card';
 
 import { useLoaderData, useNavigate } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
@@ -50,7 +49,7 @@ const JobDetails = () => {
 
     return (
         <div className=' grid grid-cols-2 gap-5 mb-24'>
-            <div>
+            {/* <div>
                 <Card className="bg-dark text-white p-4">
                     <Card.Title>{job_title}</Card.Title>
                     <Card.Text>
@@ -106,7 +105,7 @@ const JobDetails = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

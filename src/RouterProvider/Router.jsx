@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddJobs from "../Pages/Add job/AddJobs";
+import Alljobs from "../Pages/Alljobs/Alljobs";
 import BidsRequest from "../Pages/Bids Request/BidsRequest";
 import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/alljobs',
+                element: <Alljobs></Alljobs>
             },
             {
                 path: '/login',

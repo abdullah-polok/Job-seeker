@@ -1,6 +1,7 @@
-import Aboutus from "../../Components/About us/Aboutus.jsx/Aboutus";
+
 import Banner from "../../Components/Banner/Banner";
 import JobCategory from "../../Components/Job Category/JobCategory";
+import ShowImage from "../../Components/showimage/ShowImage";
 import State from "../../Components/State/State";
 
 const Home = () => {
@@ -8,8 +9,9 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <JobCategory></JobCategory>
+            <ShowImage></ShowImage>
             <State></State>
-            <Aboutus></Aboutus>
+
         </div>
     );
 };
