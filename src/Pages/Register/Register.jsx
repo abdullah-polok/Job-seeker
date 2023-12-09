@@ -1,8 +1,9 @@
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../../../../../MileStone 12/Assignment 12/assignment-12/src/Provider/AuthProvider";
 import loginImage from '../../assets/sign-in-page-abstract-concept-vector-illustration-enter-application-mobile-screen-user-login-form-website-page-interface-ui-new-profile-registra-2J3T8FG-removebg-preview.png'
 
 const Register = () => {

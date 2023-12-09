@@ -24,7 +24,6 @@ const State = () => {
                 <div className="stat-value text-secondary">2.6M</div>
                 <div className="stat-desc">21% more than last month</div>
             </div>
-
             <div className="stat">
                 <div className="stat-figure text-secondary">
                     <div className="avatar online">
