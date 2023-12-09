@@ -6,9 +6,10 @@
 - Used ExpressJs as a server
 - Used Firebase for hosting frontend
 - Used Vercel for hosting the backend server
-  
+
 # Live Site 
-- https://simple-firebase-17e01.web.app/
+- https://jobseeker-916e0.web.app/  
+
 
 
 
