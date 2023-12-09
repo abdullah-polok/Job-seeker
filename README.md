@@ -1,3 +1,21 @@
+# My Project Description
+
+- Used Tailwind CSS with DaisyUI
+- Used ReactJs and javascript
+- Used React router
+- Used ExpressJs as a server
+- Used Firebase for hosting frontend
+- Used Vercel for hosting the backend server
+  
+# Live Site 
+- https://simple-firebase-17e01.web.app/
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
