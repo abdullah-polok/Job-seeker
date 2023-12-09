@@ -8,7 +8,7 @@
 - Used Vercel for hosting the backend server
 
 # Live Site 
-- https://jobseeker-916e0.web.app/  
+- https://simple-firebase-17e01.web.app/
 
 
 
