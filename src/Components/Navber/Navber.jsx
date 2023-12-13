@@ -13,6 +13,7 @@ const Navber = () => {
         <li><NavLink className='no-underline text-lg mx-0  mr-3 ' to={'/'}>Home</NavLink></li>
         <li><NavLink className='no-underline text-lg mx-0  mr-3 ' to={'/alljobs'}>All Jobs</NavLink></li>
         <li><NavLink className='no-underline text-lg mx-0  mr-3 ' to={'/addjobs'}>Add Jobs</NavLink></li>
+        <li><NavLink className='no-underline text-lg mx-0  mr-3 ' to={'/contactus'}>Contact us</NavLink></li>
 
     </>
     return (

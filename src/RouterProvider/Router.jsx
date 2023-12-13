@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import AddJobs from "../Pages/Add job/AddJobs";
 import Alljobs from "../Pages/Alljobs/Alljobs";
 import BidsRequest from "../Pages/Bids Request/BidsRequest";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import JobDetails from "../Pages/Job Details/JobDetails";
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/contactus',
+                element: <ContactUs containerElement={<div style={{ height: '100%' }} />}
+                    mapElement={<div style={{ height: '100%' }} />}></ContactUs>
             },
             {
                 path: '/addjobs',
