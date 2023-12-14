@@ -50,8 +50,8 @@ const Fetaure = () => {
     return (
         <div className=''>
 
-            <div className='avatar'>
-                <button className=" rounded-full shadow-lg shadow-gray-300" onClick={() => document.getElementById('my_modal_3').showModal()}><FaRegMessage className='bg-[#6e48aa] text-white w-12 h-12 p-3 rounded-full'></FaRegMessage></button>
+            <div className='avatar rounded-full  right-80 absolute z-30 shadow-lg shadow-gray-400 '>
+                <button className=" rounded-full " onClick={() => document.getElementById('my_modal_3').showModal()}><FaRegMessage className='bg-[#6e48aa] text-white w-12 h-12 p-3 rounded-full'></FaRegMessage></button>
             </div>
             <dialog id="my_modal_3" className="modal">
                 <div className="modal-box">
